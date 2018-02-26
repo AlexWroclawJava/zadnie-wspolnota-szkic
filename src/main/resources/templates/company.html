@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+    <style type="text/css">
+
+        .header {
+            background: darkslateblue;
+            height: 100px;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 600px;
+            margin: auto;
+        }
+        .content {
+            background: antiquewhite;
+            height: 100%;
+            color: black;
+            list-style-type: georgian;
+        }
+        .links {
+            color: red;
+        }
+
+    </style>
+
+    <title>Title</title>
+
+</head>
+<body>
+
+        <a style="color: black" href="../companies.html" th:href="@{/firmy}">Powrót do listy firm</a> <br/><br/>
+
+<!--<h1 th:text="${company.getName()}"></h1>-->
+
+        <address>
+            <strong> <h3 th:text="${company.getName()}"></h3> </strong>
+            1355 Market Street, Suite 900<br/>
+            San Francisco, CA 94103<br/>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+
+<h6>Pracownicy:</h6>
+
+<ul>
+        <li th:each="employee: ${company.getEmployeeList()}">
+
+            <a style="color: black" href="/info/1" th:href="'/info/' + ${employee.id}" th:text="${employee.getName()} + ' ' + ${employee.getSurname()}" ></a>
+
+        <!--<a href="../info.html" th:href="@{/info/{id}} + th:text="${employee.getName()}"> <img th:src="${z.name} + '.jpg'" /> </a>-->
+
+        <!--<a span href="../animalsDetails.html" th:href="@{/info/} + ${.name}"></a>-->
+
+
+    </li>
+</ul>
+
+</body>
+</html>

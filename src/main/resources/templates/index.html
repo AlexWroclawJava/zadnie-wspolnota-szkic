@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="employee: ${employees}" >
+        <a href="/info/1" th:href="'/info/' + ${employee.id}" th:text="${employee.name} + ' ' + ${employee.surname}">
+            Ktośtam Ktośtam
+        </a>
+        <a th:href="'/edycja/' + ${employee.id}">(E)</a>
+    </li>
+</ul>
+
+
+</body>
+</html>
