@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <h4><a style="color: black" href="../wspolnoty.html" th:href="@{/}">Powrót do strony głównej</a></h4><br/><br/>
+
+<ul>
+    <li th:each="wspolnota: ${wspolnoty}" >
+        <a href="/wspolnota/1" th:href="'/wspolnota/' + ${wspolnota.id}" th:text="${wspolnota.name}">
+            Firma jakaśtam
+        </a>
+        <a th:href="'/wspolnota/edycja/' + ${wspolnota.id}">(Edytuj)</a>
+    </li>
+</ul>
+
+</body>
+</html>

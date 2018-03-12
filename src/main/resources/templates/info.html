@@ -6,11 +6,17 @@
 </head>
 <body>
 
-<h1>Info o pracowniku</h1>
+<h1>Info o mieszkańcu</h1>
 
-<p th:text="${employee.name}"></p>
-<p th:text="${employee.surname}"></p>
-<p th:text="${employee}"></p>
+<a style="color: black" href="../index.html" th:href="@{/lista}">Powrót do listy mieszkańców wspólnot</a> <br/><br/>
+<a style="color: black" href="../wspolnoty.html" th:href="@{/wspolnoty/}">Powrót do listy wspólnot</a> <br/><br/>
+
+
+<p th:text="${mieszkaniec.name}"></p>
+<p th:text="${mieszkaniec.surname}"></p>
+<!--<p th:text="${employee.plec}"></p>-->
+<p th:text="${mieszkaniec.wyswietl()}"></p>
+
 
 </body>
 </html>

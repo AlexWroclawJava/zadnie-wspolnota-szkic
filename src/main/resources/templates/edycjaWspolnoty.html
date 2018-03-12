@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Edytuj wspólnotę</h1>
+
+<a style="color: black" href="../wspolnoty.html" th:href="@{/wspolnoty.html}">Powrót do listy wspólnot</a> <br/><br/>
+
+<form th:action="'/wspolnota/edycja/' + ${wspolnota.id}" method="post"  th:object="${wspolnota}">
+
+    <input type="hidden" th:field="*{id}"/>
+    Nazwa: <input type="text" th:field="*{name}" />
+    Nazwa_ulicy: <input type="text" th:field="*{address_street}" />
+    Numer_ulicy: <input type="text" th:field="*{address_number}" />
+    Nazwa_Województwa: <input type="text" th:field="*{voivodship}" />
+
+    <input type="submit" value="Zapisz zmiany" />
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Edytuj mieszkanca</h1>
+
+<form th:action="'/edycja/' + ${mieszkaniec.id}" method="post"  th:object="${mieszkaniec}">
+
+    <input type="hidden" th:field="*{id}"/>
+    Imię: <input type="text" th:field="*{name}" />
+    Nazwisko: <input type="text" th:field="*{surname}" />
+    Plec: <input type="text" th:field="*{plec}" />
+
+    <input type="submit" value="Zapisz zmiany" />
+
+</form>
+
+
+</body>
+</html>

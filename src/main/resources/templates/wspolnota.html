@@ -39,30 +39,37 @@
 </head>
 <body>
 
-        <a style="color: black" href="../companies.html" th:href="@{/firmy}">Powrót do listy firm</a> <br/><br/>
+        <a style="color: black" href="../wspolnoty.html" th:href="@{/wspolnoty.html}">Powrót do listy wspólnot</a> <br/><br/>
+
+        <h4><a style="color: black" href="../wspolnoty.html" th:href="@{/usun/{id}}">Usuń wspólnotę</a></h4><br/><br/>
 
 <!--<h1 th:text="${company.getName()}"></h1>-->
 
         <address>
-            <strong> <h3 th:text="${company.getName()}"></h3> </strong>
-            1355 Market Street, Suite 900<br/>
-            San Francisco, CA 94103<br/>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
+            <strong> <h2 th:text="${wspolnota.getName()}"></h2> </strong>
+            <h7 th:text="${wspolnota.getAddress_street()}"></h7>
+            <h7 th:text="${wspolnota.getAddress_number()}"></h7><br/>
+            woj. <h7 th:text="${wspolnota.getVoivodship()}"></h7><br/>
+            Polska<br/>
+            <abbr title="Phone">T:</abbr> (32) 231-75-649
         </address>
 
-<h6>Pracownicy:</h6>
+        <div class="media mt-3">
+            <img th:src="${'/'} + ${wspolnota.name} + '.jpg'" />
+        </div>
+
+
+
+
+<h6>Mieszkańcy</h6>
 
 <ul>
-        <li th:each="employee: ${company.getEmployeeList()}">
+        <li th:each="mieszkaniec: ${wspolnota.getMieszkaniecList()}">
 
-            <a style="color: black" href="/info/1" th:href="'/info/' + ${employee.id}" th:text="${employee.getName()} + ' ' + ${employee.getSurname()}" ></a>
+            <a style="color: black" href="/info/1" th:href="'/info/' + ${mieszkaniec.id}" th:text="${mieszkaniec.getName()} + ' ' + ${mieszkaniec.getSurname()}" > </a>
+            <a th:href="'/edycja/' + ${mieszkaniec.id}">(Edytuj)</a>
 
-        <!--<a href="../info.html" th:href="@{/info/{id}} + th:text="${employee.getName()}"> <img th:src="${z.name} + '.jpg'" /> </a>-->
-
-        <!--<a span href="../animalsDetails.html" th:href="@{/info/} + ${.name}"></a>-->
-
-
-    </li>
+        </li>
 </ul>
 
 </body>

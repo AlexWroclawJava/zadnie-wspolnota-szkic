@@ -6,14 +6,17 @@
 </head>
 <body>
 
-<ul>
-    <li th:each="employee: ${employees}" >
-        <a href="/info/1" th:href="'/info/' + ${employee.id}" th:text="${employee.name} + ' ' + ${employee.surname}">
-            Ktośtam Ktośtam
-        </a>
-        <a th:href="'/edycja/' + ${employee.id}">(E)</a>
-    </li>
-</ul>
+    <a style="color: black" th:href="@{/wspolnota/dodaj}">Dodaj nową wspólnotę</a><br/><br/>
+
+    <a style="color: black" th:href="@{/wspolnoty}">Wyświetl listę istniejących wspólnot</a><br/><br/>
+
+    <a style="color: black" th:href="@{/lista}">Lista mieszkańców wszystkich wspólnot</a><br/><br/>
+    <!--<h1>Lista mieszkańców wszystkich wspólnot</h1>-->
+
+    <br/><br/>
+    <h3>Legenda</h3>
+    <h4> M - mężczyzna </h4>
+    <h4> K - kobieta </h4>
 
 
 </body>

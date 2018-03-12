@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
 
     <style type="text/css">
-        
+
 
         .header {
             background: darkslateblue;
@@ -44,22 +44,27 @@
 <div class="header">
     <div class="header-content">
         <div>
-            <h2>Dodawanie nowej firmy</h2>
+            <h2>Dodawanie nowej wspólnoty</h2>
         </div>
     </div>
 </div>
 
 <div class="content">
     <div style="color: blue" class="links">
-    <a style="color: black" href="../companies.html" th:href="@{/}">Powrót do listy z firmami</a> <br/><br/>
+    <a style="color: black" href="../wspolnoty.html" th:href="@{/}">Powrót do strony głównej</a> <br/><br/>
     </div>
 </div>
 
+
+
 <div>
 
-<form action="/firmy/dodaj" method="post" th:object="${company}">
+<form action="/wspolnota/dodaj" method="post" th:object="${wspolnota}">
 
-        Nazwa: <input type="text" th:field="${company.name}"/>
+        Nazwa: <input type="text" th:field="*{name}"/>
+        Adress_street: <input type="text" th:field="*{address_street}"/>
+        Adress_number: <input type="number" th:field="*{address_number}"/>
+        Voivodship: <input type="text" th:field="*{voivodship}"/>
 
         <input type="submit" class="btn btn-success" value="Dodaj" />
         </form>

@@ -6,15 +6,15 @@
 </head>
 <body>
 
-<h1>Edytuj pracownika</h1>
+<h1>Dodaj mieszkańca do listy mieszkańców wspólnot</h1>
 
-<form th:action="'/edycja/' + ${employee.id}" method="post"  th:object="${employee}">
+<form action="/dodaj" method="post"  th:object="${mieszkaniec}">
 
-    <input type="hidden" th:field="*{id}"/>
     Imię: <input type="text" th:field="*{name}" />
     Nazwisko: <input type="text" th:field="*{surname}" />
+    Plec: <input type="text" th:field="*{plec}" />
 
-    <input type="submit" value="Zapisz zmiany" />
+    <input type="submit" value="Dodaj" />
 
 </form>
 
